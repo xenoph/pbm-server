@@ -3,6 +3,8 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { GraphQLScalarType } from 'graphql';
 import merge from 'lodash/merge';
 
+import TeamModule from './graphql/Team.module';
+
 export const DateTime = new GraphQLScalarType({
     name: 'DateTime',
     description: 'Resolves to javascript date object',
@@ -70,8 +72,8 @@ const baseResolvers = {
 };
 
 const schema = makeExecutableSchema({
-    typeDefs: transpileSchema(baseTypeDefs + ''),
-    resolvers: merge(baseResolvers),
+    typeDefs: transpileSchema(baseTypeDefs + TeamModule.typeDefs + ''),
+    resolvers: merge(baseResolvers, TeamModule.resolvers),
 });
 
 export default schema;
