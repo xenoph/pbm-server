@@ -5,7 +5,7 @@ import cors from 'cors';
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
 
-import schema from './graphql.schema';
+import schema from './src/graphql.schema';
 
 const app = express();
 app.use(cors());
