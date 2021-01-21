@@ -3,7 +3,7 @@ dotenv.config();
 
 import cors from 'cors';
 import express from 'express';
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 
 import schema from './src/graphql.schema';
 
@@ -16,6 +16,6 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app, path: '/graphql' });
 
-app.listen({ port: 4000 }, () => {
+app.listen({ port: process.env.PORT || 4000 }, () => {
     console.log('Apollo Server on http://localhost:4000/graphql');
 });
