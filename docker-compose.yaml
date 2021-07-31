@@ -1,0 +1,30 @@
+version: '3'
+services:
+    node:
+        image: 'node:12'
+        user: 'node'
+        working_dir: /home/node/app
+        env_file:
+            - ./local.env
+        environment:
+            - NODE_ENV=development
+            - MONGODB_URI=mongodb://mongo:27017/boilerplate # hostname of mongo service
+            - REDIS_URL=redis://redis:6379 # hostname of redis service
+        volumes:
+            - ./:/home/node/app
+        ports:
+            - '3000:3000' # Webpack web dev server
+            - '4000:4000' # Dev server
+            # - "5000:5000" Potential new service / server or thing
+        command: 'npm run dev'
+    mongo:
+        image: 'mongo:latest'
+        ports:
+            - 27017:27017
+        volumes:
+            - mongostorage:/data/db
+    redis:
+        image: 'redis:latest'
+
+volumes:
+    mongostorage:

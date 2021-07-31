@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 19">
+    <defs>
+        <style>
+            .cls-1{fill:#28292c}
+        </style>
+    </defs>
+    <g id="Group_138" data-name="Group 138" transform="translate(-360 -89)">
+        <rect id="Rectangle_102" width="24" height="3" class="cls-1" data-name="Rectangle 102" rx="1.5" transform="translate(360 89)"/>
+        <rect id="Rectangle_103" width="24" height="3" class="cls-1" data-name="Rectangle 103" rx="1.5" transform="translate(360 97)"/>
+        <rect id="Rectangle_104" width="24" height="3" class="cls-1" data-name="Rectangle 104" rx="1.5" transform="translate(360 105)"/>
+    </g>
+</svg>

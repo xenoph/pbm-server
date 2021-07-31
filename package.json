@@ -1,36 +1,78 @@
 {
-    "name": "pbm-server",
+    "name": "pbm",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/server/index.js",
     "scripts": {
-        "start": "node index.js",
-        "dev": "nodemon --exec babel-node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node build/server/index.js",
+        "dev": "run-p dev:*",
+        "dev:web": "webpack-dev-server --config ./config/webpack.web.config.js",
+        "dev:server-build": "webpack --watch --config ./config/webpack.server.config.js",
+        "dev:server-run": "nodemon --watch ./build/server ./build/server/index.js",
+        "dev:worker-build": "webpack --watch --config ./config/webpack.worker.config.js",
+        "dev:worker-run": "nodemon --watch ./build/worker ./build/worker/index.js",
+        "build": "run-p build:*",
+        "build:web": "webpack --config ./config/webpack.web.config.js",
+        "build:server": "webpack --config ./config/webpack.server.config.js",
+        "build:worker": "webpack --config ./config/webpack.worker.config.js",
+        "test": "run-s test:*",
+        "test:all": "jest --color --verbose --coverage"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ]
     },
     "alias": {
-        "graphql": "./src/graphql"
+        "web": "./src/web",
+        "worker": "./src/worker",
+        "server": "./src/server"
     },
     "author": "Bjørn Vidar Dahle",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.11.6",
-        "@babel/node": "^7.10.5",
         "@babel/preset-env": "^7.11.5",
-        "eslint": "^7.10.0",
-        "eslint-config-prettier": "^6.12.0",
-        "eslint-plugin-prettier": "^3.1.4",
+        "@babel/preset-react": "^7.12.10",
+        "babel-loader": "^8.2.2",
+        "copy-webpack-plugin": "^7.0.0",
+        "html-webpack-plugin": "^4.5.1",
         "nodemon": "^2.0.4",
-        "prettier": "^2.1.2"
+        "npm-run-all": "^4.1.5",
+        "webpack": "^5.16.0",
+        "webpack-cli": "^4.4.0",
+        "webpack-dev-server": "^3.11.2",
+        "webpack-node-externals": "^2.5.2"
     },
     "dependencies": {
-        "apollo-server": "^2.18.1",
+        "@apollo/client": "^3.3.7",
+        "@apollo/react-hooks": "^4.0.0",
+        "@auth0/auth0-spa-js": "^1.13.6",
+        "@babel/polyfill": "^7.12.1",
+        "apollo-boost": "^0.4.9",
+        "apollo-cache-inmemory": "^1.6.6",
+        "apollo-link": "^1.2.14",
+        "apollo-link-http": "^1.5.17",
         "apollo-server-express": "^2.18.1",
-        "cors": "^2.8.5",
+        "auth0": "^2.32.0",
+        "body-parser": "^1.19.0",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "graphql": "^15.3.0",
         "graphql-s2s": "^0.20.2",
-        "graphql-tools": "^6.2.3"
+        "graphql-tag": "^2.11.0",
+        "graphql-tools": "^6.2.3",
+        "graphql-type-json": "^0.3.2",
+        "jsonwebtoken": "^8.5.1",
+        "jwks-rsa": "^1.12.2",
+        "lodash": "^4.17.20",
+        "mongodb": "^3.6.3",
+        "morgan": "^1.10.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-router-dom": "^5.2.0",
+        "styled-components": "^5.2.1",
+        "uuid": "^8.3.0"
     }
 }

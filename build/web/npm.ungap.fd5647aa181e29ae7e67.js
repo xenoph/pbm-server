@@ -1,0 +1,2 @@
+(self.webpackChunkpbm=self.webpackChunkpbm||[]).push([[345],{9149:(e,t,o)=>{"use strict";o.d(t,{Z:()=>s}),function(e){function t(){var t=this||self;t.globalThis=t,delete e.prototype._T_}"object"!=typeof globalThis&&(this?t():(e.defineProperty(e.prototype,"_T_",{configurable:!0,get:t}),_T_))}(Object);const s=globalThis}}]);
+//# sourceMappingURL=npm.ungap.fd5647aa181e29ae7e67.js.map

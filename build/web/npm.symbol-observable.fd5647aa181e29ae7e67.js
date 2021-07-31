@@ -1,0 +1,2 @@
+(self.webpackChunkpbm=self.webpackChunkpbm||[]).push([[408],{7121:(e,b,o)=>{"use strict";o.d(b,{Z:()=>s}),e=o.hmd(e);const s=(n="undefined"!=typeof self?self:"undefined"!=typeof window?window:void 0!==o.g?o.g:e,"function"==typeof(l=n.Symbol)?l.observable?f=l.observable:(f=l("observable"),l.observable=f):f="@@observable",f);var n,f,l}}]);
+//# sourceMappingURL=npm.symbol-observable.fd5647aa181e29ae7e67.js.map
