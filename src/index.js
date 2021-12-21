@@ -3,7 +3,7 @@ dotenv.config();
 
 import cors from 'cors';
 import express from 'express';
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 
 import schema from './graphql.schema';
 
