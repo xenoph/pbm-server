@@ -4,7 +4,7 @@ dotenv.config();
 import cors from 'cors';
 import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import setupMongodbClient from './schema/settings/mongodb';
+import setupMongodbClient from './settings/mongodb';
 
 import schema from './graphql.schema';
 

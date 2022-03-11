@@ -13,8 +13,6 @@ async function setupMongodbClient() {
         Players: mongodb.collection('Players'),
     };
 
-    db.VanndataTidsserie.createIndex({ time: 1 });
-
     return db;
 }
 
